@@ -3,7 +3,19 @@
 
 use std::mem;
 
-fn main() {
+fn scope_and_shadowing() {
+    let x = 42;
+    {
+        let b = 456;
+        println!("inside, b = {}", b);
+        let x = "forty-two";
+        println!("inside, x = {}", x);
+
+    }
+    println!("outside, x = {}", x);
+}
+
+fn fundamental_data_types() {
   let a: u8 = 123; // u = unsigned, 8bits, 0-255
   // it's a macro because of the exclaimation mark
   // pair of curly braces will be replaced with the value of the variable
@@ -39,4 +51,9 @@ fn main() {
   // boolean
   let g = true;
   println!("g = {}, takes up {} bytes", g, mem::size_of_val(&g));
+}
+
+fn main() {
+  fundamental_data_types();
+  scope_and_shadowing();
 }
