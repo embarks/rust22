@@ -41,10 +41,32 @@ fn while_loop() {
   }
 }
 
+fn for_loop() {
+  for x in 0..10 {
+    if x == 3 { 
+      println!("instead of printing this number, the loop will continue");
+      continue; 
+    }
+
+    if x == 8 { 
+      println!("instead of printing this number, the loop will break");
+      break; 
+    }
+    println!("x is equal to {}", x);
+  }
+
+  for (pos,y) in (30..41).enumerate() {
+    println!("{} {}", pos, y);
+  }
+}
+
 fn main () {
   // println!("If statements!");
   // if_statement();
 
-  println!("While and loop!");
-  while_loop();
+  // println!("While and loop!");
+  // while_loop();
+
+  println!("For loop!");
+  for_loop();
 }
