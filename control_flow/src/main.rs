@@ -24,7 +24,27 @@ fn if_statement() {
     });
 }
 
+fn while_loop() {
+
+  let mut x = 1;
+  while x < 1000 {
+    x *= 2;
+    if x == 64 { continue; }
+    println!("x = {}", x);
+  }
+
+  let mut y = 0;
+  loop {
+    y += 1;
+    println!("loop {}!", y);
+    if y == 5<<1 { break; }
+  }
+}
+
 fn main () {
-println!("If statements!");
-if_statement();
+  // println!("If statements!");
+  // if_statement();
+
+  println!("While and loop!");
+  while_loop();
 }
